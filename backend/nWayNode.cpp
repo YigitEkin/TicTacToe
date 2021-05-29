@@ -52,6 +52,11 @@ nWayNode::nWayNode(const int &noOfNodes,unsigned short *parentGame, int mark, in
 	branches = new nWayNode[noOfNodes];
 }
 
+/**
+ * @author Yigit Ekin
+ * Determining is whether the current state corresponds to a ending case
+ * @return true if game is over. false if game is not over
+ */
 bool nWayNode::isGameOver() {
     bool empty = true;
     for (int i = 0; i < 9; ++i) {
@@ -63,6 +68,11 @@ bool nWayNode::isGameOver() {
     return isOWin() || isXWin() || empty;
 }
 
+/**
+ * @author Yigit Ekin
+ * Determining is whether the current state corresponds to winning case for mark O
+ * @return true if O wins. false if O loses
+ */
 bool nWayNode::isOWin() {
     int target = 3 * O;
 
@@ -76,6 +86,11 @@ bool nWayNode::isOWin() {
            (currentBoard[2] + currentBoard[4] + currentBoard[6] == target); // sub diagonal
 }
 
+/**
+ * @author Yigit Ekin
+ * Determining is whether the current state corresponds to winning case for mark X
+ * @return true if X wins. false if X loses
+ */
 bool nWayNode::isXWin() {
     int target = 3 * X;
 
@@ -89,6 +104,12 @@ bool nWayNode::isXWin() {
         (currentBoard[2] + currentBoard[4] + currentBoard[6] == target);    // sub diagonal
 }
 
+/**
+ * @author Yigit Ekin
+ * Determining is whether the current state corresponds to winning case for mark X
+ * @param mark the mark of the user (X-O)
+ * @return 1 if the stated mark wins. 2 if the stated mark loses. 3 if the game has not ended. 4 if it is a draw
+ */
 unsigned short nWayNode::getGameStatus(const unsigned short& mark) {
     if (!isGameOver())
         return 3;
