@@ -92,12 +92,12 @@ clean: CMakeFiles/backend.dir/clean
 CMakeFiles/backend.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\backend.dir\build.make CMakeFiles/backend.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\backend.dir\build.make CMakeFiles/backend.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Harun Can\Documents\GitHub\TicTacToe\backend\cmake-build-debug\CMakeFiles" --progress-num=1,2,3 "Built target backend"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Harun Can\Documents\GitHub\TicTacToe\backend\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4 "Built target backend"
 .PHONY : CMakeFiles/backend.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/backend.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Harun Can\Documents\GitHub\TicTacToe\backend\cmake-build-debug\CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Harun Can\Documents\GitHub\TicTacToe\backend\cmake-build-debug\CMakeFiles" 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/backend.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Harun Can\Documents\GitHub\TicTacToe\backend\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/backend.dir/rule

@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/cmake-build-debug/DecisionTree.cpp">
+			<Option target="backend"/>
+		</Unit>
+		<Unit filename="C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/cmake-build-debug/DecisionTree.h">
+			<Option target="backend"/>
+		</Unit>
 		<Unit filename="C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/main.cpp">
 			<Option target="backend"/>
 		</Unit>
