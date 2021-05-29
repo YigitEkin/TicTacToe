@@ -15,7 +15,7 @@ private:
     unsigned short nodeResult;
     unsigned short totalWinCount;
     unsigned short getTotalWin();
-    unsigned short getGameStatus( const unsigned short & mark); // returns 1 if win. returns 2 if lose. returns 3 if not ended
+    unsigned short getGameStatus( const unsigned short & mark); // returns 1 if win. returns 2 if lose. returns 3 if not ended. 4 draw.
     bool isXWin();
     bool isOWin();
     bool isGameOver();

@@ -82,18 +82,24 @@ unsigned short nWayNode::getGameStatus(const unsigned short& mark) {
     if (!isGameOver())
         return 3;
     else {
-        if ( mark == X) {
+        if (mark == X) {
             if (isXWin()) {
                 return 1;
-            } else
+            } else if (isOWin()) {
                 return 2;
+            } else {
+                return 4;
+            }
         }
 
-        if ( mark == O) {
+        if (mark == O) {
             if (isOWin()) {
                 return 1;
-            } else
+            } else if (isXWin()) {
                 return 2;
+            } else {
+                return 4;
+            }
         }
     }
 }
