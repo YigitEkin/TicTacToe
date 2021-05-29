@@ -4,9 +4,9 @@
 
 #include "DecisionTree.h"
 DecisionTree::DecisionTree() {
-	root = new nWayNode(9, initialBoard, 10, 1);
+	root = new nWayNode(9, initialBoard, nWayNode::Empty, 1);
 	// Temporarily setting mark to be O (2)
-	mark = 2;
+	mark = nWayNode::O;
 	addHelper(root);
 }
 /**
@@ -14,18 +14,18 @@ DecisionTree::DecisionTree() {
  * a pre-order traversal algorithm which helps creating the decision tree of all possible games
  */
 void DecisionTree::addHelper(nWayNode* root) {
-	if(root->isGameOver()) {
+	if(!root->isGameOver()) {
 		root->nodeResult = root->getGameStatus(mark);
 		if(root->nodecount % 2 == 0) {
 			for(int i = 0; i < 9; i++) {
-				if(	root->branches[i].currentBoard[i] == 10) {
-					root->branches[i].currentBoard[i] = 2;
+				if(	root->branches[i].currentBoard[i] == nWayNode::Empty) {
+					root->branches[i].currentBoard[i] = nWayNode::O;
 				}
 			}
 		} else {
 			for(int i = 0; i < 9; i++) {
-				if(	root->branches[i].currentBoard[i] == 10) {
-					root->branches[i].currentBoard[i] = 1;
+				if(	root->branches[i].currentBoard[i] == nWayNode::Empty) {
+					root->branches[i].currentBoard[i] = nWayNode::X;
 				}
 			}
 		}

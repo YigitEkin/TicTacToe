@@ -6,9 +6,9 @@
 #define BACKEND_NWAYNODE_H
 #include "DecisionTree.h"
 class nWayNode {
-    const unsigned short X = 1;
-    const unsigned short Empty = 10;
-    const unsigned short O = 2;
+    const static unsigned short X = 1;
+    const static unsigned short Empty = 10;
+    const static unsigned short O = 2;
 private:
 	friend class DecisionTree;
     nWayNode* branches;
