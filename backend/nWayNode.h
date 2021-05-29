@@ -11,6 +11,7 @@ class nWayNode {
 private:
     nWayNode* branches;
     unsigned short currentBoard[9];
+    unsigned short nodecount;
     unsigned short nodeResult;
     unsigned short totalWinCount;
     unsigned short getTotalWin();
@@ -18,5 +19,5 @@ private:
 public:
     nWayNode( const int& noOfNodes);
     ~nWayNode();
-}
+};
 #endif //BACKEND_NWAYNODE_H
