@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/nWayNode.cpp
+nWayNode.h
+/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/nWayNode.h
+
+/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/nWayNode.h
+
