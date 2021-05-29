@@ -20,7 +20,8 @@ private:
     bool isOWin();
     bool isGameOver();
 public:
-    nWayNode( const int& noOfNodes);
+	nWayNode();
+    nWayNode(const int &noOfNodes,unsigned short *parentGame, int mark, int markLocation);
     ~nWayNode();
 };
 #endif //BACKEND_NWAYNODE_H

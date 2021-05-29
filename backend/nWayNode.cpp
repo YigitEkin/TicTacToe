@@ -1,11 +1,9 @@
 //
-// Created by Yigit ekin on 29.05.2021.
+// Created by Yigit ekin  on 29.05.2021.
 //
 
 #include "nWayNode.h"
 
-<<<<<<< HEAD
-=======
 //nWayNode::nWayNode()  {
 //    nWayNode* branches;
 //    unsigned short currentBoard[9];
@@ -15,11 +13,13 @@
 //    unsigned short getGameStatus();
 //}
 
->>>>>>> 0bbc693453cb594062d2f76f81374dcb1cf758e3
 nWayNode::~nWayNode() {
 
 }
-
+/**
+ * @author Harun Can Surav
+ * @return total wins below (including current node)
+ */
 unsigned short nWayNode::getTotalWin() {
     if(nodecount == 0) {
 	    if (nodeResult == 1) {
@@ -36,9 +36,20 @@ unsigned short nWayNode::getTotalWin() {
     }
 	return totalWinCount;
 }
-
-nWayNode::nWayNode(const int &noOfNodes) {
-
+/**
+ * @author Harun Can Surav
+ * Constructor for node
+ * @param noOfNodes is the number of childs the node is going to have
+ * @param parentGame is the inherited board
+ * @param mark is the mark which will be added (X-O)
+ * @param markLocation is the location where the aforementioned mark will be added
+ */
+nWayNode::nWayNode(const int &noOfNodes,unsigned short *parentGame, int mark, int markLocation) {
+	for(int i = 0; i < 9; i++) {
+		currentBoard[i] = parentGame[i];
+	}
+	currentBoard[markLocation] = mark;
+	branches = new nWayNode[noOfNodes];
 }
 
 bool nWayNode::isGameOver() {
