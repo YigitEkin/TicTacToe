@@ -12,8 +12,10 @@ public:
 	~DecisionTree();
 
 private:
+	unsigned short[] initialBoard = {10,10,10,10,10,10,10,10,10};
 	nWayNode* root;
-
+	void addHelper(nWayNode* root);
+	unsigned short mark;
 };
 
 

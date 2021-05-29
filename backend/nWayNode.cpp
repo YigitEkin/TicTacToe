@@ -44,7 +44,7 @@ unsigned short nWayNode::getTotalWin() {
  * @param mark is the mark which will be added (X-O)
  * @param markLocation is the location where the aforementioned mark will be added
  */
-nWayNode::nWayNode(const int &noOfNodes,unsigned short *parentGame, int mark, int markLocation) {
+nWayNode::nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, short markLocation) {
 	for(int i = 0; i < 9; i++) {
 		currentBoard[i] = parentGame[i];
 	}

@@ -23,7 +23,7 @@ private:
     bool isGameOver();
 public:
 	nWayNode();
-    nWayNode(const int &noOfNodes,unsigned short *parentGame, int mark, int markLocation);
+    nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, short markLocation);
     ~nWayNode();
 };
 #endif //BACKEND_NWAYNODE_H
