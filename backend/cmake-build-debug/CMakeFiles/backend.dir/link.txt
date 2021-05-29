@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\backend.dir/objects.a
-C:\gnu\bin\ar.exe cr CMakeFiles\backend.dir/objects.a @CMakeFiles\backend.dir\objects1.rsp
-C:\gnu\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\backend.dir/objects.a -Wl,--no-whole-archive -o backend.exe -Wl,--out-implib,libbackend.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\backend.dir\linklibs.rsp
