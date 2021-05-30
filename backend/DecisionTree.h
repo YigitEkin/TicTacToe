@@ -5,16 +5,16 @@
 #ifndef BACKEND_DECISIONTREE_H
 #define BACKEND_DECISIONTREE_H
 #include "nWayNode.h"
-class nWayNode;
+
 class DecisionTree {
 public:
 	DecisionTree();
 	~DecisionTree();
 
 private:
+	static unsigned short initialBoard[9];
 	nWayNode* root;
-	unsigned short initialBoard[9];
-	void addHelper(nWayNode* input);
+	void addHelper(nWayNode* root);
 	unsigned short mark;
 };
 
