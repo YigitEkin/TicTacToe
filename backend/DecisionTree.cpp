@@ -4,6 +4,10 @@
 
 #include "DecisionTree.h"
 DecisionTree::DecisionTree() {
+    for (int i = 0; i < 9; ++i) {
+        initialBoard[i] = 10;
+    }
+
 	root = new nWayNode(9, initialBoard, nWayNode::Empty, 1);
 	// Temporarily setting mark to be O (2)
 	mark = nWayNode::O;

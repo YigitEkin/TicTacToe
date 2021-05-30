@@ -1,11 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/backend.dir/DecisionTree.cpp.obj"
-  "CMakeFiles/backend.dir/main.cpp.obj"
-  "CMakeFiles/backend.dir/nWayNode.cpp.obj"
-  "backend.exe"
-  "backend.exe.manifest"
+  "CMakeFiles/backend.dir/DecisionTree.cpp.o"
+  "CMakeFiles/backend.dir/main.cpp.o"
+  "CMakeFiles/backend.dir/nWayNode.cpp.o"
+  "backend"
   "backend.pdb"
-  "libbackend.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
