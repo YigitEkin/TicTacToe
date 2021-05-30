@@ -4,14 +4,7 @@
 
 #include "nWayNode.h"
 
-//nWayNode::nWayNode()  {
-//    nWayNode* branches;
-//    unsigned short currentBoard[9];
-//    unsigned short nodeResult;
-//    unsigned short totalWinCount;
-//    unsigned short getTotalWin();
-//    unsigned short getGameStatus();
-//}
+nWayNode::nWayNode()  {}
 
 nWayNode::~nWayNode() {
 

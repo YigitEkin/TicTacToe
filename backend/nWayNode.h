@@ -9,6 +9,10 @@ class nWayNode {
     const static unsigned short X = 1;
     const static unsigned short Empty = 10;
     const static unsigned short O = 2;
+public:
+	nWayNode();
+	nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, short markLocation);
+	~nWayNode();
 private:
 	friend class DecisionTree;
     nWayNode* branches;
@@ -21,9 +25,6 @@ private:
     bool isXWin();
     bool isOWin();
     bool isGameOver();
-public:
-	nWayNode();
-    nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, short markLocation);
-    ~nWayNode();
+
 };
 #endif //BACKEND_NWAYNODE_H

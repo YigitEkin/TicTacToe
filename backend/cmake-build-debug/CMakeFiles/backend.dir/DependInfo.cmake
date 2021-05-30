@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/DecisionTree.cpp" "/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/cmake-build-debug/CMakeFiles/backend.dir/DecisionTree.cpp.o"
-  "/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/main.cpp" "/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/cmake-build-debug/CMakeFiles/backend.dir/main.cpp.o"
-  "/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/nWayNode.cpp" "/Users/reyhanekin/Desktop/GitHub/TicTacToe/backend/cmake-build-debug/CMakeFiles/backend.dir/nWayNode.cpp.o"
+  "C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/DecisionTree.cpp" "C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/cmake-build-debug/CMakeFiles/backend.dir/DecisionTree.cpp.obj"
+  "C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/main.cpp" "C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/cmake-build-debug/CMakeFiles/backend.dir/main.cpp.obj"
+  "C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/nWayNode.cpp" "C:/Users/Harun Can/Documents/GitHub/TicTacToe/backend/cmake-build-debug/CMakeFiles/backend.dir/nWayNode.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
