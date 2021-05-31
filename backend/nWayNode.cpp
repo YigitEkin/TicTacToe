@@ -12,7 +12,10 @@ nWayNode::nWayNode()  {
 //    unsigned short getTotalWin();
 //    unsigned short getGameStatus();
 }
-
+/**
+ * @author Harun Can Surav
+ * ITS FRIDAY THEEN, ITS SATURDAY SUNDAY WHAT
+ */
 nWayNode::~nWayNode() {
 
 }
