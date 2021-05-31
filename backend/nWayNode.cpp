@@ -4,14 +4,14 @@
 
 #include "nWayNode.h"
 
-//nWayNode::nWayNode()  {
+nWayNode::nWayNode()  {
 //    nWayNode* branches;
 //    unsigned short currentBoard[9];
 //    unsigned short nodeResult;
 //    unsigned short totalWinCount;
 //    unsigned short getTotalWin();
 //    unsigned short getGameStatus();
-//}
+}
 
 nWayNode::~nWayNode() {
 
@@ -134,4 +134,5 @@ unsigned short nWayNode::getGameStatus(const unsigned short& mark) {
             }
         }
     }
+    return -1;
 }

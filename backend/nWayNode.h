@@ -6,6 +6,10 @@
 #define BACKEND_NWAYNODE_H
 #include "DecisionTree.h"
 class nWayNode {
+public:
+    nWayNode();
+    nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, short markLocation);
+    ~nWayNode();
     const static unsigned short X = 1;
     const static unsigned short Empty = 10;
     const static unsigned short O = 2;
@@ -21,9 +25,5 @@ private:
     bool isXWin();
     bool isOWin();
     bool isGameOver();
-public:
-	nWayNode();
-    nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, short markLocation);
-    ~nWayNode();
 };
 #endif //BACKEND_NWAYNODE_H

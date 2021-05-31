@@ -1,6 +1,6 @@
 #include <iostream>
-
+#include "DecisionTree.h"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    DecisionTree a;
     return 0;
 }

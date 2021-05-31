@@ -14,28 +14,33 @@ DecisionTree::DecisionTree() {
 	addHelper(root);
 }
 /**
- * @author Harun Can Surav
+ * @author Harun Can Surav and Yiğit Ekin
  * a pre-order traversal algorithm which helps creating the decision tree of all possible games
  */
 void DecisionTree::addHelper(nWayNode* root) {
-	if(!root->isGameOver()) {
-		root->nodeResult = root->getGameStatus(mark);
-		if(root->nodecount % 2 == 0) {
-			for(int i = 0; i < 9; i++) {
-				if(	root->branches[i].currentBoard[i] == nWayNode::Empty) {
-					root->branches[i].currentBoard[i] = nWayNode::O;
-				}
-			}
-		} else {
-			for(int i = 0; i < 9; i++) {
-				if(	root->branches[i].currentBoard[i] == nWayNode::Empty) {
-					root->branches[i].currentBoard[i] = nWayNode::X;
-				}
-			}
-		}
-		for(int i = 0; i < root->nodecount; i++) {
-			addHelper(root->branches + i);
-		}
-	}
+    if (root->isGameOver()) {
+        root->nodeResult = root->getGameStatus(mark);
+        root->branches = nullptr;
+        return;
+    } else {
+        int emptyCount = 0;
+        std::vector<unsigned short> boardPlaysIndex; ///to collect empty indexes at the board
+        for (unsigned short i = 0; i < 9; ++i) {
+            if (root->currentBoard[i] == nWayNode::Empty) {
+                boardPlaysIndex.push_back(i);
+                ++emptyCount;
+            }
+        }
 
+        for (int i = 0; i < emptyCount; ++i) {
+            nWayNode temp(emptyCount - 1, root->currentBoard, mark, boardPlaysIndex[i]);
+            root->branches[i] = temp;
+        }
+
+        for (int i = 0; i < emptyCount; ++i) {
+            addHelper(root->branches + i);
+        }
+    }
 }
+
+
