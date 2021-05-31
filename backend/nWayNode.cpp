@@ -1,40 +1,34 @@
 //
-// Created by Yigit ekin  on 29.05.2021.
+// Created by Yiğit ekin  on 29.05.2021.
 //
 
 #include "nWayNode.h"
 
-nWayNode::nWayNode()  {
-//    nWayNode* branches;
-//    unsigned short currentBoard[9];
-//    unsigned short nodeResult;
-//    unsigned short totalWinCount;
-//    unsigned short getTotalWin();
-//    unsigned short getGameStatus();
+nWayNode::nWayNode()  { //TODO
 }
 
-nWayNode::~nWayNode() {
-
+nWayNode::~nWayNode() { //TODO
 }
+
 /**
  * @author Harun Can Surav
  * @return total wins below (including current node)
  */
 unsigned short nWayNode::getTotalWin() {
     if(nodecount == 0) {
-	    if (nodeResult == 1) {
-		    totalWinCount = 1;
-	    }
-	    else {
-	    	totalWinCount = 0;
-	    }
+        if (nodeResult == 1) {
+            totalWinCount = 1;
+        }
+        else {
+            totalWinCount = 0;
+        }
     }
     else {
-	    for(int i = 0; i < nodecount; i++) {
-		    totalWinCount += branches[i].totalWinCount;
-	    }
+        for(int i = 0; i < nodecount; i++) {
+            totalWinCount += branches[i].totalWinCount;
+        }
     }
-	return totalWinCount;
+    return totalWinCount;
 }
 /**
  * @author Harun Can Surav
@@ -46,14 +40,14 @@ unsigned short nWayNode::getTotalWin() {
  */
 nWayNode::nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, short markLocation) {
     nodecount = noOfNodes;
-	for(int i = 0; i < 9; i++) {
-		currentBoard[i] = parentGame[i];
-	}
-	currentBoard[markLocation] = mark;
-	if(noOfNodes != 0)
-	    branches = new nWayNode[noOfNodes];
+    for(int i = 0; i < 9; i++) {
+        currentBoard[i] = parentGame[i];
+    }
+    currentBoard[markLocation] = mark;
+    if(noOfNodes != 0)
+        branches = new nWayNode[noOfNodes];
     else
-        branches = NULL;
+        branches = nullptr;
 }
 
 /**
@@ -99,13 +93,13 @@ bool nWayNode::isXWin() {
     int target = 3 * X;
 
     return (currentBoard[0] + currentBoard[1] + currentBoard[2] == target)  || //first column
-        (currentBoard[3] + currentBoard[4] + currentBoard[5] == target)  || //second column
-        (currentBoard[6] + currentBoard[7] + currentBoard[8] == target)  || // third column
-        (currentBoard[0] + currentBoard[3] + currentBoard[6] == target)  || // first row
-        (currentBoard[1] + currentBoard[4] + currentBoard[7] == target)  || // second row
-        (currentBoard[2] + currentBoard[5] + currentBoard[8] == target)  || // third row
-        (currentBoard[0] + currentBoard[4] + currentBoard[8] == target)  || // main diagonal
-        (currentBoard[2] + currentBoard[4] + currentBoard[6] == target);    // sub diagonal
+           (currentBoard[3] + currentBoard[4] + currentBoard[5] == target)  || //second column
+           (currentBoard[6] + currentBoard[7] + currentBoard[8] == target)  || // third column
+           (currentBoard[0] + currentBoard[3] + currentBoard[6] == target)  || // first row
+           (currentBoard[1] + currentBoard[4] + currentBoard[7] == target)  || // second row
+           (currentBoard[2] + currentBoard[5] + currentBoard[8] == target)  || // third row
+           (currentBoard[0] + currentBoard[4] + currentBoard[8] == target)  || // main diagonal
+           (currentBoard[2] + currentBoard[4] + currentBoard[6] == target);    // sub diagonal
 }
 
 /**
@@ -140,6 +134,7 @@ unsigned short nWayNode::getGameStatus(const unsigned short& mark) {
     }
     return -1;
 }
+
 void nWayNode::operator=(const nWayNode &copy) {
     this->nodecount = copy.nodecount;
     this->nodeResult = copy.nodeResult;
@@ -147,3 +142,4 @@ void nWayNode::operator=(const nWayNode &copy) {
         this->currentBoard[i] = copy.currentBoard[i];
     this->totalWinCount = copy.totalWinCount;
 }
+

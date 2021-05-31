@@ -8,13 +8,14 @@ DecisionTree::DecisionTree() {
         initialBoard[i] = 10;
     }
 
-	root = new nWayNode(9, initialBoard, nWayNode::Empty, 1);
-	// Temporarily setting mark to be O (2)
-	mark = nWayNode::O;
-	addHelper(root);
+    root = new nWayNode(9, initialBoard, nWayNode::Empty, 1);
+    // Temporarily setting mark to be O (2)
+    mark = nWayNode::O;
+    addHelper(root);
+    winCountCalculator(root);
 }
 /**
- * @author Harun Can Surav and Yiğit Ekin
+ * @authors Harun Can Surav and Yiğit Ekin
  * a pre-order traversal algorithm which helps creating the decision tree of all possible games
  */
 void DecisionTree::addHelper(nWayNode* root) {
@@ -47,23 +48,22 @@ void DecisionTree::addHelper(nWayNode* root) {
         }
     }
 }
-<<<<<<< HEAD
 /**
  * @author Harun Can Surav
  * Recursive function which calculates sum of winning games for each node //TODO
  * @param root is the node which you want to start calculating number of winning cases from
  */
 void DecisionTree::winCountCalculator(nWayNode* root) {
-
-        for(int i = 0; i < root->nodecount; i++) {
-            nWayNode* tmp = root->branches + i;
-            if(tmp)
+    for(int i = 0; i < root->nodecount; i++) {
+        nWayNode* tmp = root->branches + i;
+        if(tmp)
             winCountCalculator(tmp);
-        }
+    }
     root->getTotalWin();
 }
+
 /**
- * @author Harun Can Surav
+ * @authors Harun Can Surav and Yiğit Ekin
  * A method which post order traverses the tree and deletes its nodes
  * @param root is the node which you want to destroy (with its children)
  */
@@ -71,12 +71,10 @@ void DecisionTree::destructorHelper(nWayNode *root) {
     for(int i = 0; i < root->nodecount; i++) {
         destructorHelper(root->branches + i);
     }
-    delete root;
+    delete[] root->branches;
 }
-=======
->>>>>>> parent of 8a4bf01... Total win count calculator method is initialized.
 
 DecisionTree::~DecisionTree() {
-
+    destructorHelper(root);
 }
 

@@ -11,14 +11,16 @@ using namespace std;
 
 class DecisionTree {
 public:
-	DecisionTree();
-	~DecisionTree();
+    DecisionTree();
+    ~DecisionTree();
 
 private:
-	unsigned short initialBoard[9];
-	nWayNode* root;
-	void addHelper(nWayNode* root);
-	unsigned short mark;
+    unsigned short initialBoard[9];
+    nWayNode* root;
+    void addHelper(nWayNode* root);
+    void winCountCalculator(nWayNode* root);
+    void destructorHelper(nWayNode* root);
+    unsigned short mark;
 };
 
 

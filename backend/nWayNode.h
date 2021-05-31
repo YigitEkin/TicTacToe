@@ -1,5 +1,5 @@
 //
-// Created by Yigit ekin on 29.05.2021.
+// Created by Yiğit ekin on 29.05.2021.
 //
 
 #ifndef BACKEND_NWAYNODE_H
@@ -14,7 +14,7 @@ public:
     const static unsigned short Empty = 10;
     const static unsigned short O = 2;
 private:
-	friend class DecisionTree;
+    friend class DecisionTree;
     nWayNode* branches;
     void operator = (const nWayNode &copy);
     unsigned short currentBoard[9];
