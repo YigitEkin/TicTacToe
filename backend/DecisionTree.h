@@ -6,7 +6,7 @@
 #define BACKEND_DECISIONTREE_H
 #include "nWayNode.h"
 #include <vector>
-
+class nWayNode;
 using namespace std;
 
 class DecisionTree {
