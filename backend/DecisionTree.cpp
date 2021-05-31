@@ -3,14 +3,15 @@
 //
 
 #include "DecisionTree.h"
-DecisionTree::DecisionTree() {
+
+DecisionTree::DecisionTree(unsigned short mark)  {
     for (int i = 0; i < 9; ++i) {
         initialBoard[i] = 10;
     }
 
     root = new nWayNode(9, initialBoard, nWayNode::Empty, 1);
     // Temporarily setting mark to be O (2)
-    mark = nWayNode::O;
+    this->mark = mark;
     addHelper(root);
     winCountCalculator(root);
 }
@@ -63,7 +64,7 @@ void DecisionTree::winCountCalculator(nWayNode* root) {
 }
 
 /**
- * @authors Harun Can Surav and Yiğit Ekin
+ * @author Harun Can Surav
  * A method which post order traverses the tree and deletes its nodes
  * @param root is the node which you want to destroy (with its children)
  */
@@ -77,4 +78,6 @@ void DecisionTree::destructorHelper(nWayNode *root) {
 DecisionTree::~DecisionTree() {
     destructorHelper(root);
 }
+
+
 

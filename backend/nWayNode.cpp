@@ -1,13 +1,22 @@
 //
-// Created by Yiğit ekin  on 29.05.2021.
+// Created by Yigit ekin  on 29.05.2021.
 //
 
 #include "nWayNode.h"
 
-nWayNode::nWayNode()  { //TODO
+nWayNode::nWayNode()  {
+
+    nodecount = 9;
+    for(int i = 0; i < 9; i++) {
+        currentBoard[i] = Empty;
+    }
+    for (int i = 0; i < nodecount; ++i) {
+        branches[i] = nWayNode();
+    }
 }
 
-nWayNode::~nWayNode() { //TODO
+
+nWayNode::~nWayNode() {
 }
 
 /**
@@ -30,6 +39,28 @@ unsigned short nWayNode::getTotalWin() {
     }
     return totalWinCount;
 }
+
+/**
+ * @author Yiğit Ekin
+ * @return total draws below (including current node)
+ */
+unsigned short nWayNode::getTotalDraw() {
+    if(nodecount == 0) {
+        if (nodeResult == 4) {
+            totalDrawCount = 1;
+        }
+        else {
+            totalWinCount = 0;
+        }
+    }
+    else {
+        for(int i = 0; i < nodecount; i++) {
+            totalWinCount += branches[i].totalWinCount;
+        }
+    }
+    return totalDrawCount;
+}
+
 /**
  * @author Harun Can Surav
  * Constructor for node
@@ -57,8 +88,9 @@ nWayNode::nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, 
  */
 bool nWayNode::isGameOver() {
     bool empty = true;
+
     for (int i = 0; i < 9; ++i) {
-        if (currentBoard[i] == Empty) {
+        if (currentBoard[i] != 0 && currentBoard[i] == Empty) {
             empty = false;
         }
     }
@@ -134,7 +166,6 @@ unsigned short nWayNode::getGameStatus(const unsigned short& mark) {
     }
     return -1;
 }
-
 void nWayNode::operator=(const nWayNode &copy) {
     this->nodecount = copy.nodecount;
     this->nodeResult = copy.nodeResult;
@@ -142,4 +173,6 @@ void nWayNode::operator=(const nWayNode &copy) {
         this->currentBoard[i] = copy.currentBoard[i];
     this->totalWinCount = copy.totalWinCount;
 }
+
+
 
