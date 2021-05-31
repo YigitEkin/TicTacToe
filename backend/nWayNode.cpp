@@ -48,11 +48,15 @@ unsigned short nWayNode::getTotalWin() {
  * @param markLocation is the location where the aforementioned mark will be added
  */
 nWayNode::nWayNode(const int &noOfNodes,unsigned short *parentGame, short mark, short markLocation) {
+    nodecount = noOfNodes;
 	for(int i = 0; i < 9; i++) {
 		currentBoard[i] = parentGame[i];
 	}
 	currentBoard[markLocation] = mark;
-	branches = new nWayNode[noOfNodes];
+	if(noOfNodes != 0)
+	    branches = new nWayNode[noOfNodes];
+    else
+        branches = NULL;
 }
 
 /**
@@ -138,4 +142,11 @@ unsigned short nWayNode::getGameStatus(const unsigned short& mark) {
         }
     }
     return -1;
+}
+void nWayNode::operator=(const nWayNode &copy) {
+    this->nodecount = copy.nodecount;
+    this->nodeResult = copy.nodeResult;
+    for(int i = 0; i < 9; ++i)
+        this->currentBoard[i] = copy.currentBoard[i];
+    this->totalWinCount = copy.totalWinCount;
 }

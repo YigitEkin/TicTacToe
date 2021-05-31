@@ -16,6 +16,7 @@ public:
 private:
 	friend class DecisionTree;
     nWayNode* branches;
+    void operator = (const nWayNode &copy);
     unsigned short currentBoard[9];
     unsigned short nodecount;
     unsigned short nodeResult;

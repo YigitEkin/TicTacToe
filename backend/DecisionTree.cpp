@@ -18,8 +18,9 @@ DecisionTree::DecisionTree() {
  * a pre-order traversal algorithm which helps creating the decision tree of all possible games
  */
 void DecisionTree::addHelper(nWayNode* root) {
+    root->nodeResult = root->getGameStatus(mark);
     if (root->isGameOver()) {
-        root->nodeResult = root->getGameStatus(mark);
+        root->nodecount = 0;
         root->branches = nullptr;
         return;
     } else {
@@ -31,26 +32,33 @@ void DecisionTree::addHelper(nWayNode* root) {
                 ++emptyCount;
             }
         }
-
+        root->branches = new nWayNode[emptyCount];
         for (int i = 0; i < emptyCount; ++i) {
-            nWayNode temp(emptyCount - 1, root->currentBoard, mark, boardPlaysIndex[i]);
-            root->branches[i] = temp;
+            short tmp = 1;
+            if(root->nodecount % 2 == 0)
+                tmp = 2;
+            root->branches[i] = nWayNode(emptyCount -1, root->currentBoard, tmp, boardPlaysIndex[i]);
+
         }
 
         for (int i = 0; i < emptyCount; ++i) {
+            root->getTotalWin();
             addHelper(root->branches + i);
         }
     }
 }
 /**
  * @author Harun Can Surav
- * Recursive function which calculates sum of winning games for each node
+ * Recursive function which calculates sum of winning games for each node //TODO
  * @param root is the node which you want to start calculating number of winning cases from
  */
-void DecisionTree::winCountCalculator(nWayNode *root) {
-    for(int i = 0; i < root->nodecount; i++) {
-        winCountCalculator(root->branches + i);
-    }
+void DecisionTree::winCountCalculator(nWayNode* root) {
+
+        for(int i = 0; i < root->nodecount; i++) {
+            nWayNode* tmp = root->branches + i;
+            if(tmp)
+            winCountCalculator(tmp);
+        }
     root->getTotalWin();
 }
 /**
@@ -72,5 +80,4 @@ void DecisionTree::destructorHelper(nWayNode *root) {
 DecisionTree::~DecisionTree() {
     destructorHelper(root);
 }
-
 
