@@ -43,4 +43,8 @@ void DecisionTree::addHelper(nWayNode* root) {
     }
 }
 
+DecisionTree::~DecisionTree() {
+
+}
+
 

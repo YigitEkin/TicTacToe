@@ -15,7 +15,7 @@ public:
 	~DecisionTree();
 
 private:
-	static unsigned short initialBoard[9];
+	unsigned short initialBoard[9];
 	nWayNode* root;
 	void addHelper(nWayNode* root);
 	unsigned short mark;
