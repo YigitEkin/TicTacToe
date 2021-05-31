@@ -14,7 +14,7 @@ DecisionTree::DecisionTree() {
 	addHelper(root);
 }
 /**
- * @authors Harun Can Surav and Yiğit Ekin
+ * @author Harun Can Surav and Yiğit Ekin
  * a pre-order traversal algorithm which helps creating the decision tree of all possible games
  */
 void DecisionTree::addHelper(nWayNode* root) {
@@ -47,6 +47,7 @@ void DecisionTree::addHelper(nWayNode* root) {
         }
     }
 }
+<<<<<<< HEAD
 /**
  * @author Harun Can Surav
  * Recursive function which calculates sum of winning games for each node //TODO
@@ -72,12 +73,10 @@ void DecisionTree::destructorHelper(nWayNode *root) {
     }
     delete root;
 }
+=======
+>>>>>>> parent of 8a4bf01... Total win count calculator method is initialized.
 
-/**
- * @author Harun Can Surav
- * Destructor which re-allocates the decision tree...
- */
 DecisionTree::~DecisionTree() {
-    destructorHelper(root);
+
 }
 
